@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AttendanceSysForCSharp
 {
-    public partial class Form1 : Form
+    public partial class fm_PunchCardDay : Form
     {
-        public Form1()
+        public fm_PunchCardDay()
         {
             InitializeComponent();
         }
