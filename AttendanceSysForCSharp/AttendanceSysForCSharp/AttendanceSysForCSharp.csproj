@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,14 +47,94 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="ComboBoxItem.cs" />
+    <Compile Include="DepartmentDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DepartmentDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="fm_Department.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="fm_Department.Designer.cs">
+      <DependentUpon>fm_Department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fm_Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fm_Employee.Designer.cs">
+      <DependentUpon>fm_Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fm_Holidays.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fm_Holidays.Designer.cs">
+      <DependentUpon>fm_Holidays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fm_PunchCardDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fm_PunchCardDay.Designer.cs">
+      <DependentUpon>fm_PunchCardDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fm_PunchCardMonth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fm_PunchCardMonth.Designer.cs">
+      <DependentUpon>fm_PunchCardMonth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fm_Title.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fm_Title.Designer.cs">
+      <DependentUpon>fm_Title.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublicHolidaysDS.cs">
+      <DependentUpon>PublicHolidaysDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PublicHolidaysDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PublicHolidaysDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TitleDS.cs">
+      <DependentUpon>TitleDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TitleDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TitleDS.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="fm_Department.resx">
+      <DependentUpon>fm_Department.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fm_Employee.resx">
+      <DependentUpon>fm_Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fm_Holidays.resx">
+      <DependentUpon>fm_Holidays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fm_PunchCardDay.resx">
+      <DependentUpon>fm_PunchCardDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fm_PunchCardMonth.resx">
+      <DependentUpon>fm_PunchCardMonth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fm_Title.resx">
+      <DependentUpon>fm_Title.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +144,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="App.config" />
+    <None Include="DepartmentDS.xsc">
+      <DependentUpon>DepartmentDS.xsd</DependentUpon>
+    </None>
+    <None Include="DepartmentDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DepartmentDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DepartmentDS.xss">
+      <DependentUpon>DepartmentDS.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -72,9 +165,31 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="PublicHolidaysDS.xsc">
+      <DependentUpon>PublicHolidaysDS.xsd</DependentUpon>
+    </None>
+    <None Include="PublicHolidaysDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PublicHolidaysDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PublicHolidaysDS.xss">
+      <DependentUpon>PublicHolidaysDS.xsd</DependentUpon>
+    </None>
+    <None Include="TitleDS.xsc">
+      <DependentUpon>TitleDS.xsd</DependentUpon>
+    </None>
+    <None Include="TitleDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TitleDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TitleDS.xss">
+      <DependentUpon>TitleDS.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
