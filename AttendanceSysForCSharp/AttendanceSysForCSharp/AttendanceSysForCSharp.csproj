@@ -97,6 +97,9 @@
     <EmbeddedResource Include="fm_Employee.resx">
       <DependentUpon>fm_Employee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fm_Holidays.resx">
+      <DependentUpon>fm_Holidays.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
