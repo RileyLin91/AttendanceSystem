@@ -10,3 +10,6 @@ Attendance System Implementation
 1. 按系統分析規格書建置資料庫
 2. 設計 UI
 3. 使用 ADO.NET 技術存取資料庫
+
+# Notice
+* connectionStrings node 需自行添加
