@@ -100,6 +100,12 @@
     <EmbeddedResource Include="fm_Holidays.resx">
       <DependentUpon>fm_Holidays.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fm_PunchCardDay.resx">
+      <DependentUpon>fm_PunchCardDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fm_PunchCardMonth.resx">
+      <DependentUpon>fm_PunchCardMonth.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fm_Title.resx">
       <DependentUpon>fm_Title.cs</DependentUpon>
     </EmbeddedResource>
