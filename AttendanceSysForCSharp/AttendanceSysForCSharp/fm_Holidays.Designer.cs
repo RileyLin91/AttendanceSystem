@@ -28,25 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rtbx_Description = new System.Windows.Forms.RichTextBox();
+            this.rb_No = new System.Windows.Forms.RadioButton();
+            this.rb_Yes = new System.Windows.Forms.RadioButton();
+            this.dt_Date = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.btn_Edit = new System.Windows.Forms.Button();
             this.btn_Insert = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dt_Date = new System.Windows.Forms.DateTimePicker();
-            this.rb_No = new System.Windows.Forms.RadioButton();
-            this.rb_Yes = new System.Windows.Forms.RadioButton();
-            this.rtbx_Description = new System.Windows.Forms.RichTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dgView = new System.Windows.Forms.DataGridView();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.publicHolidaysIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isHolidayDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.publicHolidaysBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.publicHolidaysDS = new AttendanceSysForCSharp.PublicHolidaysDS();
+            this.publicHolidaysTableAdapter = new AttendanceSysForCSharp.PublicHolidaysDSTableAdapters.PublicHolidaysTableAdapter();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.publicHolidaysBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.publicHolidaysDS)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.rtbx_Description);
-            this.groupBox1.Controls.Add(this.rb_No);
-            this.groupBox1.Controls.Add(this.rb_Yes);
             this.groupBox1.Controls.Add(this.dt_Date);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -59,55 +74,45 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "假日管理";
             // 
-            // btn_Cancel
+            // rtbx_Description
             // 
-            this.btn_Cancel.Font = new System.Drawing.Font("PMingLiU", 12F);
-            this.btn_Cancel.Location = new System.Drawing.Point(160, 12);
-            this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(67, 39);
-            this.btn_Cancel.TabIndex = 6;
-            this.btn_Cancel.Text = "取消";
-            this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.rtbx_Description.Location = new System.Drawing.Point(165, 120);
+            this.rtbx_Description.Name = "rtbx_Description";
+            this.rtbx_Description.Size = new System.Drawing.Size(595, 65);
+            this.rtbx_Description.TabIndex = 42;
+            this.rtbx_Description.Text = "";
             // 
-            // btn_Edit
+            // rb_No
             // 
-            this.btn_Edit.Font = new System.Drawing.Font("PMingLiU", 12F);
-            this.btn_Edit.Location = new System.Drawing.Point(87, 12);
-            this.btn_Edit.Name = "btn_Edit";
-            this.btn_Edit.Size = new System.Drawing.Size(67, 39);
-            this.btn_Edit.TabIndex = 5;
-            this.btn_Edit.Text = "修改";
-            this.btn_Edit.UseVisualStyleBackColor = true;
+            this.rb_No.AutoSize = true;
+            this.rb_No.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rb_No.Location = new System.Drawing.Point(75, 11);
+            this.rb_No.Name = "rb_No";
+            this.rb_No.Size = new System.Drawing.Size(42, 20);
+            this.rb_No.TabIndex = 41;
+            this.rb_No.Text = "否";
+            this.rb_No.UseVisualStyleBackColor = true;
             // 
-            // btn_Insert
+            // rb_Yes
             // 
-            this.btn_Insert.Font = new System.Drawing.Font("PMingLiU", 12F);
-            this.btn_Insert.Location = new System.Drawing.Point(12, 12);
-            this.btn_Insert.Name = "btn_Insert";
-            this.btn_Insert.Size = new System.Drawing.Size(67, 39);
-            this.btn_Insert.TabIndex = 4;
-            this.btn_Insert.Text = "新增";
-            this.btn_Insert.UseVisualStyleBackColor = true;
+            this.rb_Yes.AutoSize = true;
+            this.rb_Yes.Checked = true;
+            this.rb_Yes.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rb_Yes.Location = new System.Drawing.Point(15, 11);
+            this.rb_Yes.Name = "rb_Yes";
+            this.rb_Yes.Size = new System.Drawing.Size(42, 20);
+            this.rb_Yes.TabIndex = 40;
+            this.rb_Yes.TabStop = true;
+            this.rb_Yes.Text = "是";
+            this.rb_Yes.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // dt_Date
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label3.Location = new System.Drawing.Point(26, 42);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 16);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "日期";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(26, 81);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 16);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "是否放假";
+            this.dt_Date.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dt_Date.Location = new System.Drawing.Point(165, 35);
+            this.dt_Date.Name = "dt_Date";
+            this.dt_Date.Size = new System.Drawing.Size(178, 27);
+            this.dt_Date.TabIndex = 38;
             // 
             // label2
             // 
@@ -119,59 +124,163 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "描述";
             // 
-            // dt_Date
+            // label1
             // 
-            this.dt_Date.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.dt_Date.Location = new System.Drawing.Point(133, 35);
-            this.dt_Date.Name = "dt_Date";
-            this.dt_Date.Size = new System.Drawing.Size(178, 27);
-            this.dt_Date.TabIndex = 38;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Location = new System.Drawing.Point(26, 81);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 16);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "是否放假";
             // 
-            // rb_No
+            // label3
             // 
-            this.rb_No.AutoSize = true;
-            this.rb_No.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rb_No.Location = new System.Drawing.Point(193, 79);
-            this.rb_No.Name = "rb_No";
-            this.rb_No.Size = new System.Drawing.Size(42, 20);
-            this.rb_No.TabIndex = 41;
-            this.rb_No.TabStop = true;
-            this.rb_No.Text = "否";
-            this.rb_No.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label3.Location = new System.Drawing.Point(26, 42);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 16);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "日期";
             // 
-            // rb_Yes
+            // btn_Cancel
             // 
-            this.rb_Yes.AutoSize = true;
-            this.rb_Yes.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rb_Yes.Location = new System.Drawing.Point(133, 79);
-            this.rb_Yes.Name = "rb_Yes";
-            this.rb_Yes.Size = new System.Drawing.Size(42, 20);
-            this.rb_Yes.TabIndex = 40;
-            this.rb_Yes.TabStop = true;
-            this.rb_Yes.Text = "是";
-            this.rb_Yes.UseVisualStyleBackColor = true;
+            this.btn_Cancel.Font = new System.Drawing.Font("PMingLiU", 12F);
+            this.btn_Cancel.Location = new System.Drawing.Point(160, 12);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(67, 39);
+            this.btn_Cancel.TabIndex = 6;
+            this.btn_Cancel.Text = "取消";
+            this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
-            // rtbx_Description
+            // btn_Edit
             // 
-            this.rtbx_Description.Location = new System.Drawing.Point(133, 120);
-            this.rtbx_Description.Name = "rtbx_Description";
-            this.rtbx_Description.Size = new System.Drawing.Size(624, 65);
-            this.rtbx_Description.TabIndex = 42;
-            this.rtbx_Description.Text = "";
+            this.btn_Edit.Font = new System.Drawing.Font("PMingLiU", 12F);
+            this.btn_Edit.Location = new System.Drawing.Point(87, 12);
+            this.btn_Edit.Name = "btn_Edit";
+            this.btn_Edit.Size = new System.Drawing.Size(67, 39);
+            this.btn_Edit.TabIndex = 5;
+            this.btn_Edit.Text = "修改";
+            this.btn_Edit.UseVisualStyleBackColor = true;
+            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
+            // 
+            // btn_Insert
+            // 
+            this.btn_Insert.Font = new System.Drawing.Font("PMingLiU", 12F);
+            this.btn_Insert.Location = new System.Drawing.Point(12, 12);
+            this.btn_Insert.Name = "btn_Insert";
+            this.btn_Insert.Size = new System.Drawing.Size(67, 39);
+            this.btn_Insert.TabIndex = 4;
+            this.btn_Insert.Text = "新增";
+            this.btn_Insert.UseVisualStyleBackColor = true;
+            this.btn_Insert.Click += new System.EventHandler(this.btn_Insert_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.rb_Yes);
+            this.panel1.Controls.Add(this.rb_No);
+            this.panel1.Location = new System.Drawing.Point(165, 68);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(149, 46);
+            this.panel1.TabIndex = 43;
+            // 
+            // dgView
+            // 
+            this.dgView.AllowUserToAddRows = false;
+            this.dgView.AllowUserToDeleteRows = false;
+            this.dgView.AutoGenerateColumns = false;
+            this.dgView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.publicHolidaysIDDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
+            this.isHolidayDataGridViewCheckBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.Delete});
+            this.dgView.DataSource = this.publicHolidaysBindingSource;
+            this.dgView.Location = new System.Drawing.Point(13, 271);
+            this.dgView.Name = "dgView";
+            this.dgView.ReadOnly = true;
+            this.dgView.RowTemplate.Height = 24;
+            this.dgView.Size = new System.Drawing.Size(775, 321);
+            this.dgView.TabIndex = 7;
+            this.dgView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgView_CellContentClick);
+            this.dgView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgView_CellContentDoubleClick);
+            // 
+            // Delete
+            // 
+            this.Delete.DataPropertyName = "Delete";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.NullValue = "刪除";
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Delete.HeaderText = "刪除";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "刪除";
+            // 
+            // publicHolidaysIDDataGridViewTextBoxColumn
+            // 
+            this.publicHolidaysIDDataGridViewTextBoxColumn.DataPropertyName = "PublicHolidaysID";
+            this.publicHolidaysIDDataGridViewTextBoxColumn.HeaderText = "日期代碼";
+            this.publicHolidaysIDDataGridViewTextBoxColumn.Name = "publicHolidaysIDDataGridViewTextBoxColumn";
+            this.publicHolidaysIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "日期";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // isHolidayDataGridViewCheckBoxColumn
+            // 
+            this.isHolidayDataGridViewCheckBoxColumn.DataPropertyName = "IsHoliday";
+            this.isHolidayDataGridViewCheckBoxColumn.HeaderText = "是否放假";
+            this.isHolidayDataGridViewCheckBoxColumn.Name = "isHolidayDataGridViewCheckBoxColumn";
+            this.isHolidayDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "描述";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // publicHolidaysBindingSource
+            // 
+            this.publicHolidaysBindingSource.DataMember = "PublicHolidays";
+            this.publicHolidaysBindingSource.DataSource = this.publicHolidaysDS;
+            // 
+            // publicHolidaysDS
+            // 
+            this.publicHolidaysDS.DataSetName = "PublicHolidaysDS";
+            this.publicHolidaysDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // publicHolidaysTableAdapter
+            // 
+            this.publicHolidaysTableAdapter.ClearBeforeFill = true;
             // 
             // fm_Holidays
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 546);
+            this.ClientSize = new System.Drawing.Size(800, 604);
+            this.Controls.Add(this.dgView);
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_Edit);
             this.Controls.Add(this.btn_Insert);
             this.Name = "fm_Holidays";
             this.Text = "國定假日管理";
+            this.Load += new System.EventHandler(this.fm_Holidays_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.publicHolidaysBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.publicHolidaysDS)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -189,5 +298,15 @@
         private System.Windows.Forms.RichTextBox rtbx_Description;
         private System.Windows.Forms.RadioButton rb_No;
         private System.Windows.Forms.RadioButton rb_Yes;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dgView;
+        private PublicHolidaysDS publicHolidaysDS;
+        private System.Windows.Forms.BindingSource publicHolidaysBindingSource;
+        private PublicHolidaysDSTableAdapters.PublicHolidaysTableAdapter publicHolidaysTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn publicHolidaysIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isHolidayDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }
 }

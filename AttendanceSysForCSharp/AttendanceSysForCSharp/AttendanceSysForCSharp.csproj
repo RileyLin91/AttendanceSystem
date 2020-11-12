@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -90,6 +91,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublicHolidaysDS.cs">
+      <DependentUpon>PublicHolidaysDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PublicHolidaysDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PublicHolidaysDS.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="fm_Department.resx">
       <DependentUpon>fm_Department.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -130,9 +139,23 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="PublicHolidaysDS.xsc">
+      <DependentUpon>PublicHolidaysDS.xsd</DependentUpon>
+    </None>
+    <None Include="PublicHolidaysDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PublicHolidaysDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PublicHolidaysDS.xss">
+      <DependentUpon>PublicHolidaysDS.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
