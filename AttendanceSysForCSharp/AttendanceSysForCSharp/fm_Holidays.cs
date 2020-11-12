@@ -157,7 +157,46 @@ namespace AttendanceSysForCSharp
             }
         }
 
-        private void dgView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        /// <summary>
+        /// 修改作業
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_Edit_Click(object sender, EventArgs e)
+        {
+            string sql = "UPDATE [dbo].[PublicHolidays] SET [Date] = @Date, [IsHoliday] = @IsHoliday, [Description] = @Description WHERE [PublicHolidaysID] = @ID";
+            SqlConnection cn = new SqlConnection(connectionString);
+            SqlCommand cmd = new SqlCommand(sql, cn);
+            cmd.Parameters.Add("@Date", SqlDbType.Date).Value = dt_Date.Value;
+            cmd.Parameters.Add("@IsHoliday", SqlDbType.Bit).Value = rb_Yes.Checked == true ? 1 : 0;
+            cmd.Parameters.Add("@Description", SqlDbType.NVarChar).Value = rtbx_Description.Text;
+            cmd.Parameters.Add("@ID", SqlDbType.Int).Value = PublicHolidaysID;
+
+            try
+            {
+                cn.Open();
+                cmd.ExecuteNonQuery();
+                cn.Close();
+
+                MessageBox.Show("修改資料成功!!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ooops! 修改資料失敗...{ex.Message}");
+            }
+            finally
+            {
+                cn.Dispose();
+            }
+
+            ReturnInitial();
+            ReBinding();
+
+            btn_Insert.Enabled = true;
+            btn_Edit.Enabled = false;
+        }
+
+        private void dgView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int row = dgView.CurrentCell.RowIndex;
             int ID = (int)dgView.Rows[row].Cells[0].Value;
@@ -199,45 +238,6 @@ namespace AttendanceSysForCSharp
             {
                 cn.Dispose();
             }
-        }
-
-        /// <summary>
-        /// 修改作業
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btn_Edit_Click(object sender, EventArgs e)
-        {
-            string sql = "UPDATE [dbo].[PublicHolidays] SET [Date] = @Date, [IsHoliday] = @IsHoliday, [Description] = @Description WHERE [PublicHolidaysID] = @ID";
-            SqlConnection cn = new SqlConnection(connectionString);
-            SqlCommand cmd = new SqlCommand(sql, cn);
-            cmd.Parameters.Add("@Date", SqlDbType.Date).Value = dt_Date.Value;
-            cmd.Parameters.Add("@IsHoliday", SqlDbType.Bit).Value = rb_Yes.Checked == true ? 1 : 0;
-            cmd.Parameters.Add("@Description", SqlDbType.NVarChar).Value = rtbx_Description.Text;
-            cmd.Parameters.Add("@ID", SqlDbType.Int).Value = PublicHolidaysID;
-
-            try
-            {
-                cn.Open();
-                cmd.ExecuteNonQuery();
-                cn.Close();
-
-                MessageBox.Show("修改資料成功!!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ooops! 修改資料失敗...{ex.Message}");
-            }
-            finally
-            {
-                cn.Dispose();
-            }
-
-            ReturnInitial();
-            ReBinding();
-
-            btn_Insert.Enabled = true;
-            btn_Edit.Enabled = false;
         }
     }
 }
